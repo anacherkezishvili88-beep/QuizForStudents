@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: #f0f0f0;
 }
 
 /* FIXED FIGMA FRAME */
@@ -12,27 +13,128 @@
     width: 890px;
     height: 633px;
     background: white;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+}
+
+/* ===== TOP QUESTION TEXT ===== */
+.you-have-a-lot-of {
+    position: absolute;
+    top: 28px;
+    left: 30px;
+    width: 560px;
+    height: auto;
+}
+
+/* ===== CHARACTER IMAGE ===== */
+.girlcrying {
+    position: absolute;
+    top: 260px;
+    right: 0px;
+    width: 295px;
+    height: auto;
+}
+
+/* ===== OPTION A LABEL ===== */
+.a-leave-your-work {
+    position: absolute;
+    top: 250px;
+    left: 30px;
+    width: 390px;
+    height: auto;
+}
+
+/* ===== OPTION B LABEL ===== */
+.b-call-home-and-vent {
+    position: absolute;
+    top: 380px;
+    left: 30px;
+    width: 300px;
+    height: auto;
+}
+
+/* ===== OPTION C LABEL ===== */
+.c-ignore-the-tasks {
+    position: absolute;
+    top: 507px;
+    left: 30px;
+    width: 270px;
+    height: auto;
+}
+
+/* ===== STRESS LABELS — row 1 ===== */
+.still-stressed {
+    position: absolute;
+    top: 294px;
+    left: 30px;
+    width: 85px;
+    height: auto;
+}
+.feeling-better {
+    position: absolute;
+    top: 294px;
+    left: 330px;
+    width: 85px;
+    height: auto;
+}
+
+/* ===== STRESS LABELS — row 2 ===== */
+.still-stressed-2 {
+    position: absolute;
+    top: 424px;
+    left: 30px;
+    width: 85px;
+    height: auto;
+}
+.feeling-better-2 {
+    position: absolute;
+    top: 424px;
+    left: 330px;
+    width: 85px;
+    height: auto;
+}
+
+/* ===== STRESS LABELS — row 3 ===== */
+/* The third still-stressed and feeling-better use the same class name as feeling-better-3 in your HTML */
+/* We'll target by order using :nth-of-type won't work on img; instead use override below */
+img.feeling-better-3:nth-of-type(1),
+img[src*="feeling-better-1"] {
+    position: absolute;
+    top: 550px;
+    left: 330px;
+    width: 85px;
+    height: auto;
+}
+
+img[src*="still-stressed-1"] {
+    position: absolute;
+    top: 550px;
+    left: 30px;
+    width: 85px;
+    height: auto;
 }
 
 /* ===== SLIDERS ===== */
-
 .slider {
     position: absolute;
-    left: 45px;
-    width: 361px;
+    left: 30px;
+    width: 380px;
     height: 40px;
 }
 
+/* Slider 1 — Option A */
+.slider:not(.slider-2):not(.slider-3) {
+    top: 318px;
+}
+
+/* Slider 2 — Option B */
 .slider-2 {
-    top: 445px;
+    top: 448px;
 }
 
+/* Slider 3 — Option C */
 .slider-3 {
-    top: 576px;
-}
-
-.slider {
-    top: 308px;
+    top: 574px;
 }
 
 .track {
@@ -40,7 +142,7 @@
     width: 100%;
     height: 10px;
     top: 15px;
-    background: #ffffff;
+    background: #f5f5f5;
     border-radius: 17px;
     border: 1px solid #ddd;
 }
@@ -52,31 +154,60 @@
     width: 0%;
     background: #b7d5e9;
     border-radius: 17px;
+    pointer-events: none;
 }
 
 .knob {
     position: absolute;
-    top: 10px;
+    top: 8px;
     left: 0px;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     background: #3d42ce;
     border-radius: 50%;
-    cursor: pointer;
+    cursor: grab;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(61, 66, 206, 0.4);
+    transition: box-shadow 0.1s ease;
 }
 
-/* NEXT BUTTON */
+.knob:active {
+    cursor: grabbing;
+    box-shadow: 0 3px 10px rgba(61, 66, 206, 0.6);
+}
+
+/* ===== NEXT BUTTON ===== */
 .next-btn {
     position: absolute;
-    top: 185px;
-    left: 755px;
-    width: 52px;
-    height: 14px;
+    top: 182px;
+    left: 745px;
+    width: 100px;
+    height: 40px;
     border: none;
     background: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.next-bg {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .next-text {
+    position: relative;
+    z-index: 1;
+    font-family: 'Courier New', monospace;
     font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
 }

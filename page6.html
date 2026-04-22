@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 6</title>
+  <link rel="stylesheet" href="page6global.css">
+  <link rel="stylesheet" href="page6style.css">
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="macbook-pro">
+
+    <!-- BACKGROUND IMAGE -->
+    <img class="bg-image" src="img/image-19.svg" alt="" />
+
+    <!-- QUESTION TEXT -->
+    <h1 class="question-text">What helps you deal<br>with homesickness?</h1>
+
+    <!-- NEXT BUTTON -->
+    <button id="nextBtn" class="next-btn">
+      <img src="img/vector-9.svg" class="next-bg" alt="" />
+      <span class="next-text">Next</span>
+    </button>
+
+    <!--
+      SVG lines + dots.
+      Text labels sit at:
+        A  ~  center x≈563, y≈393
+        B  ~  center x≈563, y≈497
+        C  ~  center x≈563, y≈576
+        D  ~  center x≈563, y≈660  → squish to 610 to fit frame
+
+      Dots (open circles) sit at end of each line, to the right of center text.
+      Lines run from dot → rightward to a convergence point near the figure.
+    -->
+    <svg class="lines-svg" viewBox="0 0 890 633" xmlns="http://www.w3.org/2000/svg">
+      <!-- A: dot at (700, 415), line to (870, 430) -->
+      <line x1="700" y1="415" x2="868" y2="428" stroke="#111" stroke-width="1.5"/>
+      <!-- B: dot at (700, 500), line to (870, 520) -->
+      <line x1="700" y1="500" x2="868" y2="518" stroke="#111" stroke-width="1.5"/>
+      <!-- C: dot at (700, 575), line to (835, 555) -->
+      <line x1="700" y1="575" x2="833" y2="555" stroke="#111" stroke-width="1.5"/>
+      <!-- D: dot at (700, 605), line to (840, 615) -->
+      <line x1="700" y1="605" x2="838" y2="615" stroke="#111" stroke-width="1.5"/>
+
+      <!-- Open circle dots -->
+      <circle cx="700" cy="415" r="6" fill="none" stroke="#111" stroke-width="2"/>
+      <circle cx="700" cy="500" r="6" fill="none" stroke="#111" stroke-width="2"/>
+      <circle cx="700" cy="575" r="6" fill="none" stroke="#111" stroke-width="2"/>
+      <circle cx="700" cy="605" r="6" fill="none" stroke="#111" stroke-width="2"/>
+    </svg>
+
+    <!-- TEXT OPTION BUTTONS -->
+    <button class="option-btn" id="btn-a" data-option="a">
+      look at photos of<br>your hometown and<br>reminisce
+    </button>
+
+    <button class="option-btn" id="btn-b" data-option="b">
+      bottle it up and<br>deal with it<br>alone
+    </button>
+
+    <button class="option-btn" id="btn-c" data-option="c">
+      call your friends<br>and family at home
+    </button>
+
+    <button class="option-btn" id="btn-d" data-option="d">
+      romanticize your<br>new life in<br>university
+    </button>
+
+  </div>
+</div>
+<script src="page6.js"></script>
+</body>
+</html>

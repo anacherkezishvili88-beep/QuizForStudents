@@ -1,0 +1,159 @@
+/* ===== PAGE WRAPPER ===== */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #c8b89a;
+}
+
+/* ===== FRAME ===== */
+.macbook-pro {
+    position: relative;
+    width: 890px;
+    height: 633px;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+    background: #c8b89a;
+}
+
+/* ===== BACKGROUND IMAGE ===== */
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===== QUESTION TEXT ===== */
+.question-text {
+    position: absolute;
+    top: 28px;
+    left: 40px;
+    width: 560px;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 36px;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    z-index: 5;
+    pointer-events: none;
+    margin: 0;
+}
+
+/* ===== NEXT BUTTON ===== */
+.next-btn {
+    position: absolute;
+    top: 290px;
+    right: 20px;
+    width: 130px;
+    height: 56px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 10;
+}
+
+.next-bg {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(0) invert(1);
+}
+
+.next-text {
+    position: relative;
+    z-index: 1;
+    font-family: "Courier New", monospace;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+/* ===== SVG LINES ===== */
+.lines-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 890px;
+    height: 633px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* ===== OPTION BUTTONS ===== */
+.option-btn {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: 600;
+    font-size: 15px;
+    color: #1a1a1a;
+    letter-spacing: 1.8px;
+    line-height: 1.65;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 6;
+    transition: color 0.15s ease;
+}
+
+.option-btn:hover {
+    opacity: 0.7;
+}
+
+/* Selected = text turns red */
+.option-btn.selected {
+    color: #cc0000;
+}
+
+/*
+  4 options evenly spaced in the lower 55% of the 633px frame.
+  Lower region: ~340px → 630px = 290px total.
+  Spacing: 290 / 4 = ~72px per slot.
+  A: 340, B: 412, C: 484, D: 556
+  Each button is ~55px tall (2–3 lines), well within each 72px slot.
+*/
+
+/* A — "look at photos of your hometown and reminisce" */
+#btn-a {
+    top: 338px;
+    left: 438px;
+    width: 255px;
+}
+
+/* B — "bottle it up and deal with it alone" */
+#btn-b {
+    top: 410px;
+    left: 455px;
+    width: 220px;
+}
+
+/* C — "call your friends and family at home" */
+#btn-c {
+    top: 488px;
+    left: 438px;
+    width: 255px;
+}
+
+/* D — "romanticize your new life in university" */
+#btn-d {
+    top: 548px;
+    left: 446px;
+    width: 255px;
+}

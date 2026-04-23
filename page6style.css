@@ -30,13 +30,9 @@
 }
 
 /* ===== QUESTION TEXT — top left ===== */
-/*
-  In Figma: large bold text, top-left, roughly top:28 left:40
-  Font looks like a slab/courier style
-*/
 .question-text {
     position: absolute;
-    top: 30px;
+    top: 28px;
     left: 40px;
     width: 500px;
     margin: 0;
@@ -50,14 +46,10 @@
     pointer-events: none;
 }
 
-/* ===== NEXT BUTTON — right side, vertically centered ===== */
-/*
-  In Figma: "Next" arrow is on the RIGHT side, roughly at y=290 (top of frame mid)
-  In your live version it appeared correctly placed but was white arrow
-*/
+/* ===== NEXT BUTTON ===== */
 .next-btn {
     position: absolute;
-    top: 265px;
+    top: 230px;
     right: 20px;
     width: 120px;
     height: 52px;
@@ -78,7 +70,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    filter: brightness(0) invert(1); /* white arrow to match Figma */
+    filter: brightness(0) invert(1);
 }
 
 .next-text {
@@ -104,14 +96,15 @@
 
 /* ===== OPTION BUTTONS ===== */
 /*
-  In Figma all 4 text blocks are on the LEFT side of the lower half,
-  each centered around x≈520, stacked vertically from y≈390 to y≈630.
-  The frame is 633px tall, so the 4 options span roughly y: 390–600.
-  Gap per option ≈ (600-390)/4 = ~52px — tight but readable.
+  Figma layout: text is left-of-center, starting around y:390.
+  Frame is 633px tall. 4 options need to fit between ~330px and ~580px.
+  Each slot = (580-330)/4 = ~62px.
+  left: 370px puts the text center at ~510px (370 + 280/2),
+  which matches the Figma center-left position.
 */
 .option-btn {
     position: absolute;
-    left: 370px;        /* left edge; text is centered within width */
+    left: 370px;
     width: 280px;
     background: none;
     border: none;
@@ -121,7 +114,7 @@
     font-size: 15px;
     color: #1a1108;
     letter-spacing: 2px;
-    line-height: 1.6;
+    line-height: 1.55;
     text-align: center;
     padding: 0;
     z-index: 6;
@@ -132,34 +125,26 @@
     opacity: 0.65;
 }
 
-/* Clicking turns text red */
 .option-btn.selected {
     color: #cc0000;
 }
 
-/*
-  Vertical positions — spread evenly across lower 55% of frame:
-  Frame height 633px.
-  Start at ~370, end at ~600.
-  4 slots: 370, 430, 505, 570
-*/
-
-/* A — "look at photos of your hometown and reminisce" */
+/* A — "look at photos of your hometown and reminisce" (~3 lines ≈ 74px tall) */
 #btn-a {
-    top: 370px;
+    top: 320px;
 }
 
-/* B — "bottle it up and deal with it alone" */
+/* B — "bottle it up and deal with it alone" (~3 lines) */
 #btn-b {
-    top: 455px;
+    top: 408px;
 }
 
-/* C — "call your friends and family at home" */
+/* C — "call your friends and family at home" (~2 lines) */
 #btn-c {
-    top: 530px;
+    top: 490px;
 }
 
-/* D — "romanticize your new life in university" */
+/* D — "romanticize your new life in university" (~3 lines) */
 #btn-d {
-    top: 585px;
+    top: 548px;
 }

@@ -1,0 +1,82 @@
+/* ===== PAGE WRAPPER ===== */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #6b7a8d;
+}
+
+/* ===== FRAME ===== */
+.macbook-pro {
+    position: relative;
+    width: 890px;
+    height: 633px;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.35);
+}
+
+/* ===== BACKGROUND IMAGE ===== */
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===== TEXT BLOCK — centered in the frame ===== */
+.text-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 780px;
+    text-align: center;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* ===== MAIN THANK YOU TEXT ===== */
+.main-text {
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 46px;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    margin: 0;
+    /* subtle text shadow to pop off the busy background */
+    text-shadow: 1px 2px 8px rgba(0,0,0,0.45);
+}
+
+/* ===== SUB TEXT ===== */
+.sub-text {
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 2px;
+    line-height: 1.35;
+    margin: 0;
+    text-shadow: 1px 2px 8px rgba(0,0,0,0.45);
+}
+
+/* ===== "HERE" LINK ===== */
+.here-link {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.here-link:hover {
+    opacity: 0.75;
+}
